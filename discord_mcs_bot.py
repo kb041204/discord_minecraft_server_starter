@@ -70,7 +70,7 @@ async def on_message(message):
 	curr_chan = message.channel
 	received_message = message.content.lower()
 	
-	help_line = "Minecraft Server BOT v0.2.3 made by shun\nCommands available:\n***/mcs show*** -------------- Show the current vote status\n***/mcs vote*** --------------- Vote to start the server\n***/mcs devote*** ------------ Cancel your vote (if you have voted)\n***/mcs help*** --------------- Show these texts"
+	help_line = "Minecraft Server BOT v0.2.3.1 made by shun\nCommands available:\n***/mcs show*** -------------- Show the current vote status\n***/mcs vote*** --------------- Vote to start the server\n***/mcs devote*** ------------ Cancel your vote (if you have voted)\n***/mcs help*** --------------- Show these texts"
 	
 	#Stop executing if it is the BOT himself
 	if message.author == client.user: 
@@ -103,7 +103,7 @@ async def on_message(message):
 					
 			if not voted:
 				if time.time() > vote_deadline_time:
-					response = sec_to_min_and_sec(time_limit) + "has passed, reseting all previous expired votes..."
+					response = sec_to_min_and_sec(time_limit) + " has passed, reseting all previous expired votes..."
 					curr_vote = 0
 					voters = []
 					vote_deadline_time = time.time() + time_limit
